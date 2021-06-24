@@ -29,6 +29,8 @@
 # print(outputs)
 # print(tokenizer.decode(outputs[0]))
 
+import json
+
 # from transformers import pipeline, TFAutoModelForSeq2SeqLM
 from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
 
