@@ -30,7 +30,7 @@
 # print(tokenizer.decode(outputs[0]))
 
 # from transformers import pipeline, TFAutoModelForSeq2SeqLM
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
 
 # tokenizer = AutoTokenizer.from_pretrained("sshleifer/distilbart-cnn-12-6")
 tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-cnn")
