@@ -29,11 +29,16 @@
 # print(outputs)
 # print(tokenizer.decode(outputs[0]))
 
-from transformers import pipeline, TFAutoModelForSeq2SeqLM
+# from transformers import pipeline, TFAutoModelForSeq2SeqLM
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-model = TFAutoModelForSeq2SeqLM.from_pretrained("facebook/bart-large-cnn")
+# tokenizer = AutoTokenizer.from_pretrained("sshleifer/distilbart-cnn-12-6")
+tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-cnn")
+
+model = AutoModelForSeq2SeqLM.from_pretrained("facebook/bart-large-cnn")
 # summarizer = pipeline('summarization')
-summarizer = pipeline('summarization', model=model, tokenizer="facebook/bart-large-cnn", framework='tf')
+# summarizer = pipeline('summarization', model=model, tokenizer="facebook/bart-large-cnn", framework='tf')
+summarizer = pipeline('summarization', model=model, tokenizer=tokenizer)
 print("*"*80)
 print(summarizer)
 print("*"*80)
