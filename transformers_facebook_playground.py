@@ -54,5 +54,5 @@ for news_item in news_list:
 	print(news_item["text_article"])
 	print("*"*80)
 	print("-"*80)
-	print(summarizer(news_item["text_article"], max_length=330, min_length=200, truncation=True))
+	print(summarizer(news_item["text_article"], max_length=330, min_length=100, truncation=True))
 	print("-"*80)
