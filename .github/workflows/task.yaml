@@ -23,3 +23,6 @@ jobs:
     - name: Run the sshleifer task
       run: |
         python transformers_sshleifer_playground.py
+    - name: Run the t5base task
+      run: |
+        python transformers_t5base_playground.py
