@@ -46,21 +46,8 @@ print(summarizer)
 print("*"*80)
 
 
-def summarize_fb(data_file_name):
-	with open(data_file_name) as data_file:
-	    data = data_file.read()
-	    news_list = json.loads(data)
-
-	for news_item in news_list:
-		print("*"*80)
-		print(news_item["text_article"])
-		print("*"*80)
-		print("-"*80)
-		long_summary = summarizer(news_item["text_article"], max_length=330, min_length=100, truncation=False)
-		print(long_summary[0]['summary_text'])
-		print("-"*80)
-		short_summary = summarizer(news_item["text_article"], max_length=50, min_length=10, truncation=False)
-		print(short_summary[0]['summary_text'])
-		print("-"*80)
-
+def summarize_fb(news_item):
+	# print(news_item["text_article"])
+	long_summary = summarizer(news_item["text_article"], max_length=330, min_length=100, truncation=False)
+	short_summary = summarizer(news_item["text_article"], max_length=50, min_length=10, truncation=False)
 	return {'long_summary': long_summary[0]['summary_text'], 'short_summary': short_summary[0]['summary_text']}
