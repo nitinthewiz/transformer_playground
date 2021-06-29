@@ -46,7 +46,7 @@ print("*"*80)
 print(summarizer)
 print("*"*80)
 
-def summarize_sshleifer(data_file_name):
+def summarize_sshleifer(news_item):
 	# print(news_item["text_article"])
 	long_summary = summarizer(news_item["text_article"], max_length=330, min_length=100, truncation=False)
 	short_summary = summarizer(news_item["text_article"], max_length=50, min_length=10, truncation=False)
