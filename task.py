@@ -1,3 +1,4 @@
+import json
 from transformers_facebook_playground import summarize_fb
 from transformers_sshleifer_playground import summarize_sshleifer
 from transformers_t5base_playground import summarize_t5base
