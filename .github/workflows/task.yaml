@@ -18,12 +18,15 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html; fi
-    - name: Run the facebook task
+    # - name: Run the facebook task
+    #   run: |
+    #     python transformers_facebook_playground.py
+    # - name: Run the sshleifer task
+    #   run: |
+    #     python transformers_sshleifer_playground.py
+    # - name: Run the t5base task
+    #   run: |
+    #     python transformers_t5base_playground.py
+    - name: Run the overall task
       run: |
-        python transformers_facebook_playground.py
-    - name: Run the sshleifer task
-      run: |
-        python transformers_sshleifer_playground.py
-    - name: Run the t5base task
-      run: |
-        python transformers_t5base_playground.py
+        python task.py
