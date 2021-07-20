@@ -41,7 +41,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained('facebook/bart-large-cnn')
 # summarizer = pipeline('summarization')
 # summarizer = pipeline('summarization', model=model, tokenizer='facebook/bart-large-cnn', framework='tf')
 
-summarizer = pipeline('summarization', model=model, tokenizer=tokenizer, truncation=True)
+summarizer = pipeline('summarization', model=model, tokenizer=tokenizer)
 print('*'*80)
 print(summarizer)
 print('*'*80)
@@ -50,6 +50,10 @@ print('*'*80)
 def summarize_fb(news_item):
 	# print(news_item['text_article'])
 
+	encoded_input = tokenizer(news_item['text_article'])
+	print(tokens)
+	print(len(tokens))
+	
 	tokens = tokenizer.tokenize(news_item['text_article'])
 	print(tokens)
 	print(len(tokens))
