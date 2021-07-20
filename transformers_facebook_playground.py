@@ -51,8 +51,8 @@ def summarize_fb(news_item):
 	# print(news_item['text_article'])
 
 	encoded_input = tokenizer(news_item['text_article'])
-	print(tokens)
-	print(len(tokens))
+	print(encoded_input)
+	print(len(encoded_input))
 	
 	tokens = tokenizer.tokenize(news_item['text_article'])
 	print(tokens)
