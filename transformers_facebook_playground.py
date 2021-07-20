@@ -53,14 +53,14 @@ def summarize_fb(news_item):
 	encoded_input = tokenizer(news_item['text_article'])
 	print(encoded_input)
 	print(len(encoded_input))
-	
+
 	tokens = tokenizer.tokenize(news_item['text_article'])
 	print(tokens)
 	print(len(tokens))
 
-	default_summary = summarizer(news_item['text_article'])
-	long_summary = summarizer(news_item['text_article'], max_length=330, min_length=100, truncation=False)
-	short_summary = summarizer(news_item['text_article'], max_length=50, min_length=10, truncation=False)
+	default_summary = summarizer(news_item['text_article'], truncation=True)
+	long_summary = summarizer(news_item['text_article'], max_length=330, min_length=100, truncation=True)
+	short_summary = summarizer(news_item['text_article'], max_length=50, min_length=10, truncation=True)
 	return {'default_summary': default_summary[0]['summary_text'],
 	        'long_summary': long_summary[0]['summary_text'],
 	        'short_summary': short_summary[0]['summary_text']}
