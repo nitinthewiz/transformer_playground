@@ -40,6 +40,7 @@ tokenizer = AutoTokenizer.from_pretrained('facebook/bart-large-cnn')
 model = AutoModelForSeq2SeqLM.from_pretrained('facebook/bart-large-cnn')
 # summarizer = pipeline('summarization')
 # summarizer = pipeline('summarization', model=model, tokenizer='facebook/bart-large-cnn', framework='tf')
+
 summarizer = pipeline('summarization', model=model, tokenizer=tokenizer)
 print('*'*80)
 print(summarizer)
@@ -48,6 +49,11 @@ print('*'*80)
 
 def summarize_fb(news_item):
 	# print(news_item['text_article'])
+
+	tokens = tokenizer.tokenize(news_item['text_article'])
+	print(tokens)
+	print(len(tokens))
+
 	default_summary = summarizer(news_item['text_article'])
 	long_summary = summarizer(news_item['text_article'], max_length=330, min_length=100, truncation=False)
 	short_summary = summarizer(news_item['text_article'], max_length=50, min_length=10, truncation=False)
