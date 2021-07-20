@@ -41,7 +41,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained('facebook/bart-large-cnn')
 # summarizer = pipeline('summarization')
 # summarizer = pipeline('summarization', model=model, tokenizer='facebook/bart-large-cnn', framework='tf')
 
-summarizer = pipeline('summarization', model=model, tokenizer=tokenizer)
+summarizer = pipeline('summarization', model=model, tokenizer=tokenizer, truncation=True)
 print('*'*80)
 print(summarizer)
 print('*'*80)
